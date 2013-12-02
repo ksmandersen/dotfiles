@@ -12,7 +12,7 @@ filetype indent on      " activates indenting for files
 set autoindent          " auto indenting
 set number              " line numbers
 set nobackup            " get rid of anoying ~file
-set nowrap		" stop wrapping lines around!
+"set nowrap		" stop wrapping lines around!
 set laststatus=2	" always show the status line
 set history=500		" keep 500 lines of command history
 set showcmd		" show incomplete commands
