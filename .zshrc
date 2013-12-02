@@ -107,3 +107,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(rbenv init - zsh)"
+
+export RBENV_VERSION="2.0.0-p247"
+export LC_ALL="en_US.UTF-8"
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
