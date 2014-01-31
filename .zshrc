@@ -17,10 +17,6 @@ export LS_COLORS
 # Helps avoid mistakes like 'rm * o' when 'rm *.o' was intended
 setopt RM_STAR_WAIT
 
-#autoload -Uz promptinit
-#autoload -Uz compinit
-#compinit
-
 zstyle ':completion:*'  auto-description 'specify: %d'
 zstyle ':completion:*'  completer _expand _complete _correct _approximate
 zstyle ':completion:*'  format 'Completing %d'
@@ -98,7 +94,7 @@ export LC_CTYPE="utf-8"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
 
 # Set the appropriate PATH
-export PATH="/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/Cellar:/usr/local/mysql/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/mysql/bin:/usr/local/sbin:$PATH"
 
 # Include stubs from npm
 export PATH="/usr/local/share/npm/bin:$PATH"
