@@ -1,22 +1,16 @@
+
+" Plugins
+"""""""""""""""""""""""""
+
 execute pathogen#infect()
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" backspace in insert mode works like normal editor
-set backspace=2
+" Apperance
+""""""""""""""""""""""""
 
 syntax on               " syntax highlighting
-filetype indent on      " activates indenting for files
 set autoindent          " auto indenting
 set number              " line numbers
-set nobackup            " get rid of anoying ~file
-"set nowrap		" stop wrapping lines around!
-set laststatus=2	" always show the status line
-set history=500		" keep 500 lines of command history
-set showcmd		" show incomplete commands
-set showmatch		" show search matches
+set wrap		" Wrap lines
 
 set bg=dark		" use dark bagground
 colorscheme desert      " colorscheme desert
@@ -26,6 +20,26 @@ set foldlevelstart=99
 set foldlevel=99
 set nofoldenable
 let g:vim_markdown_folding_disabled=0
+
+" Behavior
+"""""""""""""""""""""""""
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" backspace in insert mode works like normal editor
+set backspace=2
+
+filetype indent on      " activates indenting for files
+set nobackup            " get rid of anoying ~file
+set laststatus=2	" always show the status line
+set history=500		" keep 500 lines of command history
+set showcmd		" show incomplete commands
+set showmatch		" show search matches
+
+set ignorecase		" use case insensitive searches
+set smartcase		" unless the search contains a capital letter
 
 " Mappings
 
@@ -43,10 +57,13 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
-nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
-nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" Save file and run last shell command
+map \ :w<Enter>:!!<Enter>
 
 " Disable arrow keys
 noremap <Up> <NOP>
