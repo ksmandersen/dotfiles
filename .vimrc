@@ -71,3 +71,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+
+" Plugins
+
+" Run flake8 every time a python file is written
+autocmd BufWritePost *.py call Flake8()
