@@ -76,6 +76,10 @@ alias la='ls -Gla'
 
 alias x="open -a 'Xcode' ."
 alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
+alias ac="open -a 'AppCode' ."
+
+# Open in chrome
+alias oc='/usr/bin/open -a "/Applications/Google Chrome.app/" '
 
 # Use Git’s colored diff when available
 hash git &>/dev/null
