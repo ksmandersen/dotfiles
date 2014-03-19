@@ -96,7 +96,7 @@ export EDITOR='subl'
 export LC_CTYPE="utf-8"
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
 
 # Set the appropriate PATH
 export PATH="/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/mysql/bin:/usr/local/sbin:$PATH"
