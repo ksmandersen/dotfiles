@@ -64,6 +64,7 @@ alias .....="cd ../../../.."
 alias g="git"
 alias gs="git status"
 alias gp="git pull origin master"
+alias gl="git l"
 
 alias o="open"
 alias o.="open ."
