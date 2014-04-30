@@ -77,7 +77,33 @@ alias la='ls -Gla'
 
 alias x="open -a 'Xcode' ."
 alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
-alias ac="open -a 'AppCode' ."
+ac(){ 
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+  then
+    echo "Opening workspace"
+    open *.xcworkspace -a /Applications/AppCode.app
+    return
+  else
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    then
+      echo "Opening project"
+      open *.xcodeproj -a /Applications/AppCode.app
+      return  
+    else
+      echo "Nothing found"
+    fi
+  fi
+}
+
+shipit(){
+  if test -n "$(find . -maxdepth 1 -name 'Procfile' -print -quit)"
+  then
+    git push heroku master
+  elif test -n "$(find . -maxdepth 1 -name 'publish.sh' -print -quit)"
+  then
+    ./publish.sh
+  fi
+}
 
 # Open in chrome
 alias oc='/usr/bin/open -a "/Applications/Google Chrome.app/" '
