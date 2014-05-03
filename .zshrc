@@ -102,6 +102,9 @@ shipit(){
   elif test -n "$(find . -maxdepth 1 -name 'publish.sh' -print -quit)"
   then
     ./publish.sh
+  elif test -n "$(find . -maxdepth 1 -name '.shipit' -print -quit)"
+  then
+    ./.shipit
   fi
 }
 
