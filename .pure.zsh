@@ -16,6 +16,21 @@
 # %m => shortname host
 # %(?..) => prompt conditional - %(condition.true.false)
 
+
+# turns seconds into human readable time
+# 165392 => 1d 21h 56m 32s
+prompt_pure_human_time() {
+	local tmp=$1
+	local days=$(( tmp / 60 / 60 / 24 ))
+	local hours=$(( tmp / 60 / 60 % 24 ))
+	local minutes=$(( tmp / 60 % 60 ))
+	local seconds=$(( tmp % 60 ))
+	(( $days > 0 )) && echo -n "${days}d "
+	(( $hours > 0 )) && echo -n "${hours}h "
+	(( $minutes > 0 )) && echo -n "${minutes}m "
+	echo "${seconds}s"
+}
+
 # fastest possible way to check if repo is dirty
 prompt_pure_git_dirty() {
 	# check if we're in a git repo
@@ -28,14 +43,14 @@ prompt_pure_git_dirty() {
 
 # displays the exec time of the last command if set threshold was exceeded
 prompt_pure_cmd_exec_time() {
-	local stop=$(date +%s)
+	local stop=$EPOCHSECONDS
 	local start=${cmd_timestamp:-$stop}
 	integer elapsed=$stop-$start
-	(($elapsed > ${PURE_CMD_MAX_EXEC_TIME:=5})) && echo ${elapsed}s
+	(($elapsed > ${PURE_CMD_MAX_EXEC_TIME:=5})) && prompt_pure_human_time $elapsed
 }
 
 prompt_pure_preexec() {
-	cmd_timestamp=$(date +%s)
+	cmd_timestamp=$EPOCHSECONDS
 
 	# shows the current dir and executed command in the title when a process is active
 	print -Pn "\e]0;"
@@ -59,7 +74,7 @@ prompt_pure_precmd() {
 	print -P $prompt_pure_preprompt
 
 	# check async if there is anything to pull
-	{
+	(( ${PURE_GIT_PULL:-1} )) && {
 		# check if we're in a git repo
 		command git rev-parse --is-inside-work-tree &>/dev/null &&
 		# check check if there is anything to pull
@@ -77,8 +92,13 @@ prompt_pure_precmd() {
 
 
 prompt_pure_setup() {
+	# prevent percentage showing up
+	# if output doesn't end with a newline
+	export PROMPT_EOL_MARK=''
+
 	prompt_opts=(cr subst percent)
 
+	zmodload zsh/datetime
 	autoload -Uz add-zsh-hook
 	autoload -Uz vcs_info
 
@@ -93,7 +113,7 @@ prompt_pure_setup() {
 	[[ "$SSH_CONNECTION" != '' ]] && prompt_pure_username='%n@%m '
 
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{magenta}.%F{red})$%f '
+	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
 }
 
 prompt_pure_setup "$@"
