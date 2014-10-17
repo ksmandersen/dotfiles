@@ -10,9 +10,9 @@ execute pathogen#infect()
 syntax on               " syntax highlighting
 set autoindent          " auto indenting
 set number              " line numbers
-set wrap		" Wrap lines
+set wrap				" Wrap lines
 
-set bg=dark		" use dark bagground
+set bg=dark				" use dark bagground
 colorscheme desert      " colorscheme desert
 
 " say no to code folding
