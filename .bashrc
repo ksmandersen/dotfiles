@@ -18,7 +18,10 @@ done;
 
 # === EXPORTS ===
 
+# PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
 export EDITOR='vim'
 export LC_TYPE='utf-8'
 
