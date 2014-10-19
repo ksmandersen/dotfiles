@@ -19,7 +19,7 @@ done;
 # === EXPORTS ===
 
 # PATH
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 export EDITOR='vim'
