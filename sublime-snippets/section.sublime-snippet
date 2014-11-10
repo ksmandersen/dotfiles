@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<div class=".$1-sect-cont .contain">
+	<div class=".$1-sect-int .int">
+		$2
+	</div>
+</div>]]></content>
+	<tabTrigger>section</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

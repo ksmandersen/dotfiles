@@ -1,0 +1,55 @@
+<snippet>
+    <content><![CDATA[<!-- $title PageTitle -->
+<!-- $short_tag Short Description -->
+<!-- $description Long Description -->
+<!-- $share_image shareicon.png -->
+<!-- $url http://example.org -->
+<!-- $google-id UA-1234556-1
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="$1">
+        <meta name="keywords" content="">
+        <title><!-- $title --> ~ <!-- $short_tag --></title>
+
+        <meta name="og:title" content="<!-- $title --> ~ <!-- $short_tag -->" />
+        <meta name="og:site_name" content="<!-- $title -->" />
+        <meta name="og:url" content="<!-- $url -->" />
+        <meta name="og:description" content="<!-- $description -->" />
+        <meta name="og:image" content="<!-- @path $share_image -->" />
+        <meta name="og:locale" content="en_US" />
+        <meta name="og:type" content="website" />
+
+    	<!-- @reload -->
+        <!-- @stylesheet main -->
+        <!--[if lt IE 9]>
+	        <!-- @stylesheet ie8 -->
+        <![endif]-->
+
+    	<link rel="image_src" href="<!-- @path $share_image -->" />
+        <link href="<!-- @path favicon.ico -->" rel="shortcut icon">
+        <link href="<!-- @path apple-touch-icon.png -->" rel="apple-touch-icon">
+    </head>
+    <body>
+    	<div class="container">
+	        $3
+	    </div>
+        <!-- @javascript jquery retina main -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','<!-- $google-id -->');ga('send','pageview');
+        </script>
+    </body>
+</html>]]></content>
+    <tabTrigger>doctype</tabTrigger>
+    <description>HTML - HTML foundation</description>
+    <scope>text.html</scope>
+</snippet>
