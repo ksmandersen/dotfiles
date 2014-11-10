@@ -73,6 +73,10 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Get week number
 alias week='date +%V'
 
+
+# Open workspace or project of current folder in Xcode
+alias xc='open -a Xcode .'
+
 # === Completion ===
 
 # requires: brew install bash-completion
