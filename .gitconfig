@@ -1,6 +1,7 @@
 [alias]
 	# View the SHA, description, and history graph
-	l = log --graph --pretty=format:"%C(yellow)%h%C(cyan)%x20%Creset%aE%x20%x28%ar%x29%n%C(white)%s%n"
+	#l = log --graph --pretty "%C(yellow)%h%C(cyan)%x20%Creset%aE%x20%x28%ar%x29%n%C(white)%s%n"
+	l = log --graph --all --pretty=format:"'%C(yellow)%h %C(blue)%s%C(auto)%w(0,0,7)%+d%n %an(%ar)%n'"
 
 	# Shorten status
 	s = status
