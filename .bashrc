@@ -76,6 +76,7 @@ alias week='date +%V'
 
 # Open workspace or project of current folder in Xcode
 alias xc='open -a Xcode .'
+alias ac='open -a AppCode .'
 
 # === Completion ===
 
