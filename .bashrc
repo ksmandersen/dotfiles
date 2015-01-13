@@ -21,6 +21,7 @@ done;
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR='vim'
 export LC_TYPE='utf-8'
