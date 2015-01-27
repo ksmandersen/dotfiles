@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[.button {
+		$button-bg-color: #f0f0f0;
+		background-color: $button-bg-color;
+		background-repeat: no-repeat;
+		background-position: 14px 50%;
+		color: #fff;
+		display: inline-block;
+		font-size: 14pt;
+		padding: 14px;
+		text-align: center;
+
+		&:hover {
+			text-decoration: none;
+			background-color: tint($button-bg-color, 40%);
+		}
+	}]]></content>
+	<tabTrigger>button</tabTrigger>
+	<scope>scss.text</scope>
+</snippet>
