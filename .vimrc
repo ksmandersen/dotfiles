@@ -73,6 +73,7 @@ noremap <Right> <NOP>
 
 
 " Plugins
+set rtp+=~/.fzf		" FuzzyFinder
 
 " Run flake8 every time a python file is written
 autocmd BufWritePost *.py call Flake8()
