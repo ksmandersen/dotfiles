@@ -56,6 +56,9 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
+" Ctrl-f for FZF
+map <C-f> <esc>:FZF<CR>
+
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
