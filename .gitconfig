@@ -75,3 +75,7 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool]
 	keepBackup = true
+[credential]
+	helper = osxkeychain
+[hub]
+	protocol = git
