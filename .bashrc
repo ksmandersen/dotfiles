@@ -19,7 +19,7 @@ done;
 # === EXPORTS ===
 
 # PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
