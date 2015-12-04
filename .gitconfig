@@ -64,6 +64,7 @@
 [user]
 	email = hello@kristian.co
 	name = Kristian Andersen
+	username = ksmandersen
 [push]
 	default = matching
 [filter "media"]

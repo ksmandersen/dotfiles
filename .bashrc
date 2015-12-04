@@ -20,11 +20,11 @@ done;
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/Library/TeX/texbin/Library/TeX/texbin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR='vim'
-export LC_TYPE='utf-8'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -54,6 +54,9 @@ alias g='git'
 alias gs='g s'
 alias gl='g l'
 alias gp='g pull'
+alias gc='g c'
+alias gadd='g add'
+alias gadd.='g add .'
 
 # Grep
 
@@ -73,6 +76,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Get week number
 alias week='date +%V'
 
+alias venv='source .venv/bin/activate'
 
 # Open workspace or project of current folder in Xcode
 alias xc='open -a Xcode .'
@@ -81,13 +85,16 @@ alias ac='open -a AppCode .'
 # Start a small python web server from any directory
 alias serve='python -m SimpleHTTPServer 8000'
 
+# Using Don Melton's scripts for encoding and transcoding
+alias transcode='dm-transcode-video --add-all-subtitles --no-auto-burn'
+
+alias dokku='ssh -t at --'
+
 # === Completion ===
 
 # requires: brew install bash-completion
-if which brew > /dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
-	source "$(brew --prefix)/etc/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
 fi
 
 if [ -f ~/.git-completion.sh ]; then
@@ -109,3 +116,7 @@ source ~/.bash-ps1.sh
 # === FuzzyFinder (FZF)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export LC_TYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
