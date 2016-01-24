@@ -125,6 +125,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 source ~/.git-prompt.sh
 source ~/.bash-ps1.sh
 
+PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
+
 # === FuzzyFinder (FZF)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
