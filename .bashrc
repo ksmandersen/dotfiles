@@ -35,6 +35,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Library/TeX/texbin/Library/TeX/texbin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
+eval "$(pyenv init -)"
 
 export EDITOR='vim'
 
@@ -100,7 +101,7 @@ alias serve='python -m SimpleHTTPServer 8000'
 # Using Don Melton's scripts for encoding and transcoding
 alias transcode='dm-transcode-video --add-all-subtitles --no-auto-burn'
 
-alias dokku='ssh -t at --'
+alias vejr='curl wttr.in/copenhagen'
 
 # === Completion ===
 
