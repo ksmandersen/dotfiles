@@ -1,14 +1,14 @@
 #!/bin/bash
 
-symfiles=( .vimrc .vim .git-prompt.sh .bash-ps1.sh .bash_profile .bashrc)
-
-for s in "{symfiles[@]}"
+for s in .vimrc .vim .git-prompt.sh .bash-ps1.sh .bash_profile .bashrc
 do
-	$source="~/Projects/dotfiles/$s"
-	$target="~/$s"
+	original="/Users/ksmandersen/Code/ksmandersen/dotfiles/$s"
+	target="/Users/ksmandersen/$s"
 	if [ ! -L $target ]; then
-		ln -s $source $target
+		echo $original
+		ln -s $original $target
 	fi
+	# echo $target
 done
 
 
