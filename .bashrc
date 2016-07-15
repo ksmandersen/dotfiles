@@ -36,6 +36,7 @@ export PATH=/Library/TeX/texbin/Library/TeX/texbin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 eval "$(pyenv init -)"
+export PATH=$PATH:/usr/local/m-cli
 
 export EDITOR='vim'
 
