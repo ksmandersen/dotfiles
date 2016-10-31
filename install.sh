@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for s in .vimrc .vim .git-prompt.sh .bash-ps1.sh .bash_profile .bashrc
+for s in .vimrc .vim .git-prompt.sh .bash-ps1.sh .bash_profile .bashrc .gitconfig
 do
 	original="/Users/ksmandersen/Code/ksmandersen/dotfiles/$s"
 	target="/Users/ksmandersen/$s"
