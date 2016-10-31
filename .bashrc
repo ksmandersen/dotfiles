@@ -104,6 +104,9 @@ alias transcode='dm-transcode-video --add-all-subtitles --no-auto-burn'
 
 alias vejr='curl wttr.in/copenhagen'
 
+# Never ever do rm -rf
+alias rm=trash
+
 # === Completion ===
 
 # requires: brew install bash-completion
