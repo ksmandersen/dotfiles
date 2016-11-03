@@ -80,3 +80,5 @@
 	helper = osxkeychain
 [hub]
 	protocol = git
+[commit]
+	gpgsign = true
