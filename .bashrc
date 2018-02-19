@@ -140,3 +140,5 @@ export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
 export LC_TYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+#§eval "$(boot2docker shellinit)"
