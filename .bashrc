@@ -62,6 +62,7 @@ alias gp='g pull'
 alias gc='g c'
 alias gadd='g add'
 alias gadd.='g add .'
+alias gpu='g push origin master'
 
 # Grep
 
