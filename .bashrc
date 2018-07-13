@@ -20,15 +20,6 @@ done;
 
 # Fastlane
 
-export CERT_USERNAME="itunes@kristian.co"
-export CERT_TEAM_ID="3QNF76R8X7"
-export CERT_KEYCHAIN_PATH="~/Dropbox/Development/Keychains/Robocat.keychain"
-
-export SIGH_USERNAME="itunes@kristian.co"
-export SIGH_TEAM_ID="3QNF76R8X7"
-
-export PILOT_USERNAME="kristian+itunesconnect@robo.cat"
-export PILOT_TEAM_ID="3QNF76R8X7"
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
