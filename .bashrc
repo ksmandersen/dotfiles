@@ -29,6 +29,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PATH=$PATH:/usr/local/m-cli
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:~/go/bin
 
 export EDITOR='vim'
 
@@ -64,6 +65,7 @@ alias gc='g c'
 alias gadd='g add'
 alias gadd.='g add .'
 alias gpu='g push origin master'
+alias lg='lazygit'
 
 # Grep
 
