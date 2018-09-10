@@ -1,2 +1,8 @@
-[[ -z "$PS1" ]] && return
-[[ -r ~/.bashrc ]] && . ~/.bashrc
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+if [ -f ~/.profile ]; then
+	. ~/.profile
+fi
+

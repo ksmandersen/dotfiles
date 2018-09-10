@@ -50,9 +50,7 @@ else # OS X `ls`
 fi
 
 alias ls="ls -lF ${colorflag}"
-alias ll="ls -l -h"
 alias la="ls -laF ${colorflag}"
-alias ld="ls -lF ${colorflag} | grep --color=never '^d'"
 
 alias o='open'
 alias o.='open .'
@@ -80,27 +78,16 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Get week number
 alias week='date +%V'
 
-alias venv='source .venv/bin/activate'
-
 # Open workspace or project of current folder in Xcode
 alias xc='open -a Xcode .'
-alias ac='open -a AppCode .'
 
 # Start a small python web server from any directory
 alias serve='python -m SimpleHTTPServer 8000'
 
-# Using Don Melton's scripts for encoding and transcoding
-alias transcode='dm-transcode-video --add-all-subtitles --no-auto-burn'
-
 alias vejr='curl wttr.in/copenhagen'
-
-# Never ever do rm -rf
-alias rm=trash
 
 # === Completion ===
 
@@ -128,12 +115,7 @@ source ~/.bash-ps1.sh
 PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
 export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
 
-# === FuzzyFinder (FZF)
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export LC_TYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-#§eval "$(boot2docker shellinit)"
