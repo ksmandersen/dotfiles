@@ -4,7 +4,12 @@
 shopt -s nocaseglob;
 
 # Append to the Bash history file, rather than overwriting it
+# http://www.biostat.jhsph.edu/~afisher/ComputingClub/webfiles/KasperHansenPres/IntermediateUnix.pdf
+# https://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=10000
 shopt -s histappend;
+shopt -s cmdhist;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
