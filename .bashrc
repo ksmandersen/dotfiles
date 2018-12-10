@@ -34,6 +34,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:~/go/bin
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 export EDITOR='vim'
 
