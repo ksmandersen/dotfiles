@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.kristian.slack_spotify_status</string>
+        <key>ProgramArguments</key>
+        <array><string>/Users/ksmandersen/Code/ksmandersen/dotfiles/bin/slack_spotify_status</string></array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StartInterval</key>
+        <integer>60</integer>
+    </dict>
+</plist>
