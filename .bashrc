@@ -94,6 +94,8 @@ alias serve='python -m SimpleHTTPServer 8000'
 
 alias vejr='curl wttr.in/copenhagen'
 
+alias fuxcode="swift package -Xswiftc -I/usr/local/include -Xlinker -L/usr/local/lib generate-xcodeproj"
+
 # === Completion ===
 
 # requires: brew install bash-completion
