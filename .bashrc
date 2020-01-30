@@ -31,12 +31,16 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Library/TeX/texbin/Library/TeX/texbin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:~/go/bin
 export PATH="$HOME/.fastlane/bin:$PATH"
-
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 export EDITOR='vim'
+
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -68,7 +72,6 @@ alias gc='g c'
 alias gadd='g add'
 alias gadd.='g add .'
 alias gpu='g push origin master'
-alias lg='lazygit'
 
 # Grep
 
@@ -87,7 +90,10 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias week='date +%V'
 
 # Open workspace or project of current folder in Xcode
-alias xc='open -a Xcode .'
+alias xc="open *.xcodeproj"
+
+# Trash the derived data cache
+alias dderived="trash ~/Library/Developer/Xcode/DerivedData"
 
 # Start a small python web server from any directory
 alias serve='python -m SimpleHTTPServer 8000'
@@ -96,15 +102,17 @@ alias vejr='curl wttr.in/copenhagen'
 
 alias fuxcode="swift package -Xswiftc -I/usr/local/include -Xlinker -L/usr/local/lib generate-xcodeproj"
 
+alias mysql5="mysql --host 0.0.0.0 --port 3307 -u root --password=winteriscoming"
+alias mysql8="mysql --host 0.0.0.0 --port 3306 -u root --password=winteriscoming"
+alias redis-cli="docker exec -it redis redis-cli"
+alias psql12="psql -h 0.0.0.0 -p 54320 -w -U postgres"
+
 # === Completion ===
 
 # requires: brew install bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	. $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f ~/.git-completion.sh ]; then
-	. ~/.git-completion.sh
+    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 fi
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
@@ -116,7 +124,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # === PS1 ===
 
-source ~/.git-prompt.sh
 source ~/.bash-ps1.sh
 
 PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
@@ -125,4 +132,4 @@ export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
 export LC_TYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-
+export GPG_TTY=$(tty)

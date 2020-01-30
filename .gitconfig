@@ -24,12 +24,13 @@
 	remotes = remote -v
 
 [apply]
+	whitespace = nowarn
 	# Detect whitespace errors when applying a patch
 	# whitespace = fix
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/ksmandersen/.gitignore_global
 	attributesfile = ~/.gitattributes
 	editor = vim
 
@@ -39,7 +40,9 @@
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
-	editor = subl -w
+	branch = auto
+	diff = auto
+	status = auto
 
 [color "branch"]
 	current = yellow reverse
@@ -81,8 +84,6 @@
 	helper = osxkeychain
 [hub]
 	protocol = git
-[commit]
-	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -90,3 +91,16 @@
 	required = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
+	template = /Users/ksmandersen/.stCommitMsg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = ksmandersen
+[gpg]
+	program = gpg2
