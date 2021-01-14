@@ -93,11 +93,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [commit]
 	gpgsign = true
-	template = /Users/ksmandersen/.stCommitMsg
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -107,4 +104,4 @@
 [github]
 	user = ksmandersen
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
