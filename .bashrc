@@ -124,6 +124,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # === PS1 ===
 
+source ~/.git-prompt.sh
 source ~/.bash-ps1.sh
 
 PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
