@@ -18,10 +18,14 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
+	lu = ls-files --others --exclude-standard
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
+	file-size-diff = !~/Code/ksmandersen/dotfiles/bin/git-file-size-diff.sh
+	pushall = !git remote | xargs -L1 git push --all
 
 [apply]
 	whitespace = nowarn
