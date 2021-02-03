@@ -28,13 +28,8 @@ done;
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/Library/TeX/texbin/Library/TeX/texbin:$PATH
+eval $(/opt/homebrew/bin/brew shellenv)
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export PATH="/usr/local/heroku/bin:$PATH"
-#eval "$(pyenv init -)"
-export PATH=$PATH:/usr/local/m-cli
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:~/go/bin
-export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
