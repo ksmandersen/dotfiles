@@ -102,3 +102,5 @@
 	user = ksmandersen
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[pull]
+	rebase = false
