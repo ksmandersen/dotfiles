@@ -89,7 +89,13 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias week='date +%V'
 
 # Open workspace or project of current folder in Xcode
-alias xc="open *.xcodeproj"
+xc () {
+  if ls *.xcworkspace 1>/dev/null 2>&1; then
+    open *.xcworkspace
+  else
+    open *.xcodeproj
+  fi
+}
 
 # Trash the derived data cache
 alias dderived="trash ~/Library/Developer/Xcode/DerivedData"
