@@ -104,3 +104,5 @@
 	program = /opt/homebrew/bin/gpg
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
