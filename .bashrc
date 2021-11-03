@@ -97,6 +97,15 @@ xc () {
   fi
 }
 
+
+xc12 () {
+  if ls *.xcworkspace 1>/dev/null 2>&1; then
+    open -a /Applications/Xcode12.app *.xcworkspace
+  else
+    open -a /Applications/Xcode12.app *.xcodeproj
+  fi
+}
+
 # Trash the derived data cache
 alias dderived="trash ~/Library/Developer/Xcode/DerivedData"
 
