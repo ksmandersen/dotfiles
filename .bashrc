@@ -89,7 +89,22 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias week='date +%V'
 
 # Open workspace or project of current folder in Xcode
-alias xc="open *.xcodeproj"
+xc () {
+  if ls *.xcworkspace 1>/dev/null 2>&1; then
+    open *.xcworkspace
+  else
+    open *.xcodeproj
+  fi
+}
+
+
+xc12 () {
+  if ls *.xcworkspace 1>/dev/null 2>&1; then
+    open -a /Applications/Xcode12.app *.xcworkspace
+  else
+    open -a /Applications/Xcode12.app *.xcodeproj
+  fi
+}
 
 # Trash the derived data cache
 alias dderived="trash ~/Library/Developer/Xcode/DerivedData"
@@ -107,11 +122,11 @@ alias redis-cli="docker exec -it redis redis-cli"
 alias psql12="psql -h 0.0.0.0 -p 54320 -w -U postgres"
 
 # === Completion ===
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # requires: brew install bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
 fi
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
