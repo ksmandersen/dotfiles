@@ -71,6 +71,7 @@ alias gc='g c'
 alias gadd='g add'
 alias gadd.='g add .'
 alias gpu='g push origin master'
+alias ghead='g pull origin $(g rev-parse --abbrev-ref HEAD)'
 
 # Grep
 
