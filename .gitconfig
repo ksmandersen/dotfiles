@@ -72,7 +72,7 @@
 	email = hello@kristian.co
 	name = Kristian Andersen
 	username = ksmandersen
-	signingkey = A297F669
+	signingkey = 748F21A4
 [push]
 	default = matching
 [filter "media"]
