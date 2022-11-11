@@ -27,6 +27,9 @@
 	file-size-diff = !~/Code/ksmandersen/dotfiles/bin/git-file-size-diff.sh
 	pushall = !git remote | xargs -L1 git push --all
 
+	# push current branch
+	pc = push -u origin HEAD
+
 [apply]
 	whitespace = nowarn
 	# Detect whitespace errors when applying a patch
