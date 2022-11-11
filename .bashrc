@@ -30,8 +30,6 @@ done;
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 eval $(/opt/homebrew/bin/brew shellenv)
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export EDITOR='vim'
 
@@ -39,7 +37,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export PATH="/opt/homebrew/opt/libressl/bin:$PATH"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -119,7 +117,7 @@ alias fuxcode="swift package -Xswiftc -I/usr/local/include -Xlinker -L/usr/local
 
 alias mysql5="mysql --host 0.0.0.0 --port 3307 -u root --password=winteriscoming"
 alias mysql8="mysql --host 0.0.0.0 --port 3306 -u root --password=winteriscoming"
-alias redis-cli="docker exec -it redis redis-cli"
+#alias redis-cli="docker exec -it redis redis-cli"
 alias psql12="psql -h 0.0.0.0 -p 54320 -w -U postgres"
 
 # === Completion ===
